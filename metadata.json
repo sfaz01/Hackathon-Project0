@@ -1,0 +1,7 @@
+{
+  "name": "Civic Triage AI",
+  "description": "An AI-powered application for citizens to report municipal issues. The app uses Gemini to automatically classify, prioritize, and suggest actions for issues like potholes, graffiti, and broken streetlights, leveraging location and photo analysis.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
