@@ -1,4 +1,3 @@
-
 import React from 'react';
 import type { User, UserRole } from '../types';
 import { BuildingLibraryIcon, ClipboardDocumentListIcon, ChartBarSquareIcon, ViewColumnsIcon, ArrowPathIcon, TrophyIcon, SparklesIcon } from './icons';
@@ -61,6 +60,13 @@ export const Header: React.FC<HeaderProps> = ({ currentView, setCurrentView, use
                                 Dashboard
                             </NavButton>
                              <NavButton 
+                                isActive={currentView === 'predictions'} 
+                                onClick={() => setCurrentView('predictions')}
+                                icon={<ChartBarSquareIcon className="h-5 w-5" />}
+                            >
+                                Predictions
+                            </NavButton>
+                             <NavButton 
                                 isActive={currentView === 'leaderboard'} 
                                 onClick={() => setCurrentView('leaderboard')}
                                 icon={<TrophyIcon className="h-5 w-5" />}
@@ -75,22 +81,13 @@ export const Header: React.FC<HeaderProps> = ({ currentView, setCurrentView, use
                                 Badges
                             </NavButton>
                              {userRole === 'admin' && (
-                                <>
-                                    <NavButton 
-                                        isActive={currentView === 'kanban'} 
-                                        onClick={() => setCurrentView('kanban')}
-                                        icon={<ViewColumnsIcon className="h-5 w-5" />}
-                                    >
-                                        Board
-                                    </NavButton>
-                                    <NavButton 
-                                        isActive={currentView === 'predictions'} 
-                                        onClick={() => setCurrentView('predictions')}
-                                        icon={<ChartBarSquareIcon className="h-5 w-5" />}
-                                    >
-                                        Predictions
-                                    </NavButton>
-                                </>
+                                <NavButton 
+                                    isActive={currentView === 'kanban'} 
+                                    onClick={() => setCurrentView('kanban')}
+                                    icon={<ViewColumnsIcon className="h-5 w-5" />}
+                                >
+                                    Board
+                                </NavButton>
                              )}
                         </nav>
                         
